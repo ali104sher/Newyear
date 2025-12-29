@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy New Year ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 25px;
+  border-radius: 25px;
+  text-align: center;
+  max-width: 350px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: pop 1s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: #ff4d6d;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #444;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 10px 20px rgba(255, 77, 109, 0.4);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px rgba(255, 77, 109, 0.6);
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff4d6d;
+  transform: rotate(45deg);
+  animation: float 6s linear infinite;
+  opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #ff4d6d;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.hidden-message {
+  display: none;
+  margin-top: 15px;
+  color: #ff4d6d;
+  font-weight: 500;
+}
+
+  </style>
+</head>
+<body>  <div class="card">
+    <h1>Happy New Year 🎉</h1>
+    <h2>My Beautiful Wife 💖</h2>
+    <p>
+      A brand new year, a brand new chapter ✨<br />
+      Thank you for making every moment brighter.
+    </p>
+    <button onclick="showMessage()">Tap for a Surprise 💌</button>
+    <div class="hidden-message" id="message">
+      May this year bring us more smiles, more memories,
+      and endless love 💫
+    </div>
+  </div>  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 400);
+
+    function showMessage() {
+      document.getElementById('message').style.display = 'block';
+    }
+  </script></body>
+</html>
